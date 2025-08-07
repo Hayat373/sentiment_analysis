@@ -21,5 +21,5 @@ def load_data(file_path):
     return df
 
 if __name__ == "__main__":
-    df = load_data('../data/reviews.csv')
+    df = load_data('data/reviews.csv')
     print(df[['text', 'cleaned_text']].head())

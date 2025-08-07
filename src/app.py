@@ -1,8 +1,12 @@
-from flask import Flask, request, render_template
-from .model import load_sentiment_model, predict_sentiment
-from .preprocess import clean_text
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-app = Flask(__name__)
+from flask import Flask, request, render_template
+from src.model import load_sentiment_model, predict_sentiment
+from src.preprocess import clean_text
+
+app = Flask(__name__, template_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'templates'))
 model = load_sentiment_model()
 
 @app.route('/', methods=['GET', 'POST'])

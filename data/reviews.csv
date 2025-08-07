@@ -1,0 +1,4 @@
+text,sentiment
+"Great product, fast delivery!",positive
+"Terrible quality, broke in a day.",negative
+"It's okay, nothing special.",neutral
